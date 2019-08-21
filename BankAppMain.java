@@ -112,7 +112,7 @@ class UnsyncTransaction extends Thread{
 public class BankAppMain {
 	public static void main(String[] args) {
 		
-		BankAccount ba = new BankAccount(1000);
+		BankAccount ba = new BankAccount(5000);
 		Thread syn = null;
 		int loop = 10000;
 		
@@ -130,8 +130,8 @@ public class BankAppMain {
 				e.printStackTrace();
 			}
 		}
-		System.out.println("Deposits 100 and withdraws 50 " + loop + " times. With balance starting at 1000");
-		System.out.println("Calculated (Estimated) Result : " + (1000 + (100-50)*loop));
+		System.out.println("This app deposits 100 and withdraws 50 " + loop + " times. \nThe starting balance is 5000");
+		System.out.println("Calculated (Estimated) Result : " + (5000 + (100-50)*loop));
 		System.out.println("The synced balance:  " + ba.getBalance());
 		for(int i = 0; i < loop; i++) {
 			syn = new UnsyncTransaction(ba, 0, 100);
